@@ -23,7 +23,7 @@ try{
 
   const url=`https://pago.smc.cl/pagoAseov2/muni/la_cisterna.aspx`
 
-  await page.goto(url,{timeout:10000});
+  await page.goto(url,{waitUntil: 'domcontentloaded',timeout:10000});
   await page.waitForSelector('#ctl00_ContentPlaceHolder1_txtRol',{timeout:10000})
   await page.type('#ctl00_ContentPlaceHolder1_txtRol',rol)
   await page.type('#ctl00_ContentPlaceHolder1_txtRol2',dv)
